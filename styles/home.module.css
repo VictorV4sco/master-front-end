@@ -1,12 +1,83 @@
+.container {
+    background: gray;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 .welcome {
     text-align: center;
     border-bottom: 1px solid;
     margin: 0;
     padding: 0;
     font-size: 64px;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    background-color: black;
+    color: white;
 }
 
-.payments {
-    background-color: red;
+.subtitulo {
+    text-align: center;
+    margin-top: 10vh;
 }
+
+.navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.dropdownMenu li {
+    margin: 0.25rem 0;
+}
+
+.dropdownMenu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.3rem 0.8rem;
+    display: block;
+    border-radius: 4px;
+}
+
+.dropdownMenu li a:hover {
+    background-color: #f1f1f1;
+}
+
+.ul {
+    list-style: none;       /* remove os pontinhos */
+    display: flex;          /* coloca os itens lado a lado */
+    gap: 1rem;              /* espaço entre itens */
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link {
+    color: darkblue;
+    text-decoration: none;     /* remove sublinhado */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+

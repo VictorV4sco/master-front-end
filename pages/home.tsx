@@ -1,20 +1,77 @@
+import { useState } from 'react';
 import styles from '../styles/home.module.css'
 
 export default function HomePage() {
-    return (
-        <div>
-            <h1 className={styles.welcome}>Bem-vindo!</h1>
+    const [openPagamento, setOpenPagamento] = useState(false);
+    const [openDespesa, setOpenDespesa] = useState(false);
 
-            <div className={styles.payments}>
-                <h2>Pagamentos</h2>
-                <ul>
-                    <li><button>Inserir Pagamento</button></li>
-                    <li><button>Checar pagamento - número</button></li>
-                    <li><button>Checar pagamento - dia</button></li>
-                    <li><button>Checar pagamento - mês</button></li>
-                    <li><button>Checar pagamento - ano</button></li>
-                </ul>
+    return (
+        <div className={styles.container}>
+            <h1 className={styles.welcome}>Academia Master</h1>
+
+            <div className={styles.main}>
+
+                <div>
+                    <h2 className={styles.subtitulo}>Pagamentos</h2>
+                    <nav className={styles.navigation}>
+                        <ul className={styles.ul}>
+                            <li><a className={styles.link} href="">Inserir</a></li>
+                            <li><a className={styles.link} href="">Atualizar</a></li>
+                            <li><a className={styles.link} href="">Deletar</a></li>
+
+                            <li className={styles.dropdown}>
+                                <button className={styles.link} onClick={() => setOpenPagamento(!openPagamento)}>
+                                    Checar pagamento
+                                </button>
+                                {openPagamento && (
+                                    <ul className={styles.dropdownMenu}>
+                                    <li><a href="#">Número</a></li>
+                                    <li><a href="#">Dia</a></li>
+                                    <li><a href="#">Mês</a></li>
+                                    <li><a href="#">Ano</a></li>
+                                    </ul>
+                                )}
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div>
+                    <h2 className={styles.subtitulo}>Despesas</h2>
+                    <nav className={styles.navigation}>
+                        <ul className={styles.ul}>
+                            <li><a className={styles.link} href="">Inserir</a></li>
+                            <li><a className={styles.link} href="">Atualizar</a></li>
+                            <li><a className={styles.link} href="">Deletar</a></li>
+                            
+                            <li className={styles.dropdown}>
+                                <button className={styles.link} onClick={() => setOpenDespesa(!openDespesa)}>
+                                    Checar despesa
+                                </button>
+                                {openDespesa && (
+                                    <ul className={styles.dropdownMenu}>
+                                        <li><a href="#">Número</a></li>
+                                        <li><a href="#">Dia</a></li>
+                                        <li><a href="#">Mês</a></li>
+                                        <li><a href="#">Ano</a></li>
+                                    </ul>
+                                )}
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div>
+                    <h2 className={styles.subtitulo}>Academia</h2>
+                    <nav className={styles.navigation}>
+                        <ul className={styles.ul}>
+                            <li><a className={styles.link} href="">Checar ganhos</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
             </div>
+
         </div>
     )
 }
