@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/home.module.css'
 import Link from 'next/link'
+import LogoutButton from '@/components/LogoutButton';
 
 export default function HomePage() {
     const [openPagamento, setOpenPagamento] = useState(false);
@@ -9,6 +10,7 @@ export default function HomePage() {
     return (
         <div className={styles.container}>
             <h1 className={styles.welcome}>Academia Master</h1>
+            <LogoutButton />
 
             <div className={styles.main}>
 

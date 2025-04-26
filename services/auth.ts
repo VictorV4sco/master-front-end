@@ -14,22 +14,16 @@ export async function login({ username, password }: LoginData) {
         password: password,
     });
 
-    const basicAuth = btoa(`myclientid:myclientsecret`); //btoa converte uma string para Base64 diretamente no navegador
+    const basicAuth = btoa(`myclientid:myclientsecret`);
 
-    try {
-        const response = await api.post('/oauth2/token', data, {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Authorization': `Basic ${basicAuth}`,
-            },
-        });
-    
-        Cookies.set('token', response.data.access_token, { expires: 1 }); // 1 dia de validade
-    
-        return response.data;
-    } catch (error) {
-        console.error('Erro ao fazer login:', error);
-        throw new Error('Não foi possível fazer login. Verifique suas credenciais.');
-    }
-    
+    const response = await api.post('/oauth2/token', data, {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': `Basic ${basicAuth}`,
+        },
+    });
+
+    Cookies.set('token', response.data.access_token, { expires: 1 }); // 1 dia de validade
+
+    return response.data;
 }
