@@ -14,7 +14,7 @@ export default function LogoutButton() {
         <button 
             onClick={handleLogout} 
             style={{ 
-                position: 'absolute', // Fixa o botão na tela
+                position: 'absolute',
                 top: '20px',       // Distância do topo
                 right: '20px',     // Distância da borda direita
                 padding: '10px 20px',

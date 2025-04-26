@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../styles/home.module.css'
 import Link from 'next/link'
 import LogoutButton from '@/components/LogoutButton';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 
 export default function HomePage() {
     const [openPagamento, setOpenPagamento] = useState(false);
     const [openDespesa, setOpenDespesa] = useState(false);
+    const router = useRouter();
+    
+    useEffect(() => {
+        const token = Cookies.get('token');
+        if (!token) {
+            router.push('/login');  // Redireciona para login se não houver token
+        }
+        }, [router]);
 
     return (
         <div className={styles.container}>
