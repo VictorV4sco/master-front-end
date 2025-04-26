@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from '../styles/home.module.css'
+import Link from 'next/link'
 
 export default function HomePage() {
     const [openPagamento, setOpenPagamento] = useState(false);
@@ -15,7 +16,7 @@ export default function HomePage() {
                     <h2 className={styles.subtitulo}>Pagamentos</h2>
                     <nav className={styles.navigation}>
                         <ul className={styles.ul}>
-                            <li><a className={styles.link} href="">Inserir</a></li>
+                            <li><Link className={styles.link} href="/payment">Inserir</Link></li>
                             <li><a className={styles.link} href="">Atualizar</a></li>
                             <li><a className={styles.link} href="">Deletar</a></li>
 
