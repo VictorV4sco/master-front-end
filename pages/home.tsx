@@ -28,7 +28,7 @@ export default function HomePage() {
                     <h2 className={styles.subtitulo}>Pagamentos</h2>
                     <nav className={styles.navigation}>
                         <ul className={styles.ul}>
-                            <li><Link className={styles.link} href="/payment">Inserir</Link></li>
+                            <li><Link className={styles.link} href="/insert-payment">Inserir</Link></li>
                             <li><a className={styles.link} href="">Atualizar</a></li>
                             <li><a className={styles.link} href="">Deletar</a></li>
 

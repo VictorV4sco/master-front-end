@@ -1,0 +1,79 @@
+/* payment-insert.module.css */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111827; /* cinza bem escuro */
+    position: relative; /* <- Adiciona isso */
+}
+
+.form {
+    background-color: #1f2937; /* cinza mais claro */
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #374151;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.inputGroup input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.inputGroup svg {
+    color: #9ca3af; /* cinza claro */
+}
+
+.button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: #2563eb;
+}
+
+.alert {
+    position: absolute; /* <- Faz o alerta flutuar */
+    top: 2rem; /* Distância do topo */
+    background-color: #22c55e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    z-index: 10; /* Garante que fique acima do form */
+}
