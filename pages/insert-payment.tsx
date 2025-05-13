@@ -5,6 +5,8 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 import moment, { Moment } from 'moment';
 import api from "@/services/axios";
 import styles from '../styles/payment-insert.module.css';
+import { insertPayment } from "@/services/insertPaymentService";
+
 // Importando ícones
 import { User, FileText, DollarSign, Calendar } from 'lucide-react';
 
@@ -41,42 +43,31 @@ export default function Payment() {
     };
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    e.preventDefault();
 
-        const payload = {
-            ...form,
-            paymentMoment: form.paymentMoment.format('YYYY-MM-DDTHH:mm:ss') // transforma para string antes de enviar
-        };
-
-        try {
-            const res = await api.post('/payments/new', payload, {
-                headers: {
-                    'Authorization': `Bearer ${token}`,  // Adiciona o token no cabeçalho
-                    'Content-Type': 'application/json'
-                }
-            }); 
-            
-            if (res.status === 201) {
-                setSuccessMessage('Pagamento inserido com sucesso! 🎉');
-    
-                setForm({
-                    payerName: '',
-                    type: '',
-                    value: 0,
-                    paymentMoment: moment()
-                });
-            } else {
-                console.error('Erro ao inserir pagamento:', res);
-            }
-
-        } catch (err: unknown) {
-            if (err instanceof Error) {
-                console.error('Erro:', err.message);
-            } else {
-                console.error('Erro desconhecido');
-            }
+    try {
+        const res = await insertPayment(form);
+        
+        if (res.status === 201) {
+            setSuccessMessage('Pagamento inserido com sucesso! 🎉');
+            setForm({
+                payerName: '',
+                type: '',
+                value: 0,
+                paymentMoment: moment()
+            });
+        } else {
+            console.error('Erro ao inserir pagamento:', res);
         }
-    };
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            console.error('Erro:', err.message);
+        } else {
+            console.error('Erro desconhecido');
+        }
+    }
+};
+
 
 
     useEffect(() => {
