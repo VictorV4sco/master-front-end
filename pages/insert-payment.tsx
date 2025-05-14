@@ -56,14 +56,10 @@ export default function Payment() {
                 value: 0,
                 paymentMoment: moment()
             });
-        } else {
-            console.error('Erro ao inserir pagamento:', res);
         }
-    } catch (err: unknown) {
+    } catch (err: any) {
         if (err instanceof Error) {
-            console.error('Erro:', err.message);
-        } else {
-            console.error('Erro desconhecido');
+            alert(err.message); // mensagem já está tratada
         }
     }
 };
