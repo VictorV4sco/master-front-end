@@ -29,7 +29,6 @@ export default function HomePage() {
                     <nav className={styles.navigation}>
                         <ul className={styles.ul}>
                             <li><Link className={styles.link} href="/insert-payment">Inserir</Link></li>
-                            <li><a className={styles.link} href="#">Atualizar</a></li>
                             <li className={styles.dropdown}>
                                 <button className={styles.link} onClick={() => setOpenPagamento(!openPagamento)}>
                                     Checar pagamento
@@ -52,7 +51,6 @@ export default function HomePage() {
                     <nav className={styles.navigation}>
                         <ul className={styles.ul}>
                             <li><a className={styles.link} href="#">Inserir</a></li>
-                            <li><a className={styles.link} href="#">Atualizar</a></li>
                             <li className={styles.dropdown}>
                                 <button className={styles.link} onClick={() => setOpenDespesa(!openDespesa)}>
                                     Checar despesa
