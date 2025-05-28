@@ -1,0 +1,16 @@
+/* components/BackToHomeButton.module.css */
+.backButton {
+    padding: 8px 16px;
+    background-color: #0070f3;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.backButton:hover {
+    background-color: #005bb5;
+}

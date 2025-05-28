@@ -3,6 +3,7 @@ import { checkPaymentDay } from "@/services/checkPaymentDay";
 import { ListarTodasAsPerguntasType } from "@/types/ListarTodasAsPerguntasType";
 import styles from "@/styles/check-payment-day.module.css";
 import { toast } from 'react-toastify';
+import BackToHomeButton from '@/components/BackToHomeButton';
 
 export default function CheckPaymentDay() {
     const [listPayment, setListPayment] = useState<ListarTodasAsPerguntasType[]>([]);
@@ -35,7 +36,7 @@ export default function CheckPaymentDay() {
 
     return (
         <div className={styles.page}>
-            
+            <BackToHomeButton />
             <div className={styles.container}>
                 <h1 className={styles.title}>Buscar Pagamentos por Data</h1>
                 <form onSubmit={handleSubmit} className={styles.form}>
@@ -65,7 +66,7 @@ export default function CheckPaymentDay() {
                         ))}
                     </div>
                 ) : (
-                    <p>Nenhum pagamento encontrado.</p>
+                    <br/>
                 )}
             </div>
 

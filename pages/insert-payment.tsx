@@ -5,6 +5,7 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 import moment, { Moment } from 'moment';
 import styles from '../styles/payment-insert.module.css';
 import { insertPayment } from "@/services/insertPaymentService";
+import BackToHomeButton from '@/components/BackToHomeButton';
 
 // Importando ícones
 import { User, FileText, DollarSign, Calendar } from 'lucide-react';
@@ -73,63 +74,67 @@ export default function Payment() {
             }, [router]);
             
     return (
+        
         <div className={styles.container}>
-        {successMessage && (
-            <div className={styles.alert}>
-                {successMessage}
-            </div>
-        )}
+            {successMessage && (
+                <div className={styles.alert}>
+                    {successMessage}
+                </div>
+            )}
 
-        <form onSubmit={handleSubmit} className={styles.form}>
-            <h2 className={styles.title}>Novo Pagamento</h2>
+            <form onSubmit={handleSubmit} className={styles.form}>
+                
+                <h2 className={styles.title}>Novo Pagamento</h2>
 
-            <div className={styles.inputGroup}>
-                <User />
-                <input
-                    type="text"
-                    name="payerName"
-                    value={form.payerName}
-                    onChange={handleChange}
-                    placeholder="Nome do pagante"
-                />
-            </div>
+                <div className={styles.inputGroup}>
+                    <User />
+                    <input
+                        type="text"
+                        name="payerName"
+                        value={form.payerName}
+                        onChange={handleChange}
+                        placeholder="Nome do pagante"
+                    />
+                </div>
 
-            <div className={styles.inputGroup}>
-                <FileText />
-                <input
-                    type="text"
-                    name="type"
-                    value={form.type}
-                    onChange={handleChange}
-                    placeholder="Tipo"
-                />
-            </div>
+                <div className={styles.inputGroup}>
+                    <FileText />
+                    <input
+                        type="text"
+                        name="type"
+                        value={form.type}
+                        onChange={handleChange}
+                        placeholder="Tipo"
+                    />
+                </div>
 
-            <div className={styles.inputGroup}>
-                <DollarSign />
-                <input
-                    type="number"
-                    name="value"
-                    value={form.value}
-                    onChange={handleChange}
-                    placeholder="Valor"
-                />
-            </div>
+                <div className={styles.inputGroup}>
+                    <DollarSign />
+                    <input
+                        type="number"
+                        name="value"
+                        value={form.value}
+                        onChange={handleChange}
+                        placeholder="Valor"
+                    />
+                </div>
 
-            <div className={styles.inputGroup}>
-                <Calendar />
-                <input
-                    type="datetime-local"
-                    name="paymentMoment"
-                    value={form.paymentMoment.format('YYYY-MM-DDTHH:mm')}
-                    onChange={handleChange}
-                />
-            </div>
+                <div className={styles.inputGroup}>
+                    <Calendar />
+                    <input
+                        type="datetime-local"
+                        name="paymentMoment"
+                        value={form.paymentMoment.format('YYYY-MM-DDTHH:mm')}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <button type="submit" className={styles.button}>
-                Enviar
-            </button>
-        </form>
-    </div>
+                <button type="submit" className={styles.button}>
+                    Enviar
+                </button>
+            <BackToHomeButton />
+            </form>
+        
+        </div>
     )
 }
