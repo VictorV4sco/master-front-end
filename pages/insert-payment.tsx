@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Cookies from 'js-cookie';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import moment, { Moment } from 'moment';
-import api from "@/services/axios";
 import styles from '../styles/payment-insert.module.css';
 import { insertPayment } from "@/services/insertPaymentService";
 
