@@ -132,9 +132,8 @@ export default function Payment() {
                 <button type="submit" className={styles.button}>
                     Enviar
                 </button>
-            <BackToHomeButton />
             </form>
-        
+        <BackToHomeButton />
         </div>
     )
 }

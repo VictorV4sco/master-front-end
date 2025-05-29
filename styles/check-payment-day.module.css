@@ -41,3 +41,22 @@
 .label {
     font-weight: bold;
 }
+
+.cardActions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.deleteButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+}

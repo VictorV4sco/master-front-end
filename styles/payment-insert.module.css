@@ -1,12 +1,10 @@
-/* payment-insert.module.css */
-
 .container {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #111827; /* cinza bem escuro */
-    position: relative; /* <- Adiciona isso */
+    margin: 0;
 }
 
 .form {
