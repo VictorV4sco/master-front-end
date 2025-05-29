@@ -37,7 +37,7 @@ export default function HomePage() {
                                     <ul className={styles.dropdownMenu}>
                                         <li><a href="#">Número</a></li>
                                         <li><a href="/check-payment-day">Dia</a></li>
-                                        <li><a href="#">Mês</a></li>
+                                        <li><a href="/check-payment-month">Mês</a></li>
                                         <li><a href="#">Ano</a></li>
                                     </ul>
                                 )}
